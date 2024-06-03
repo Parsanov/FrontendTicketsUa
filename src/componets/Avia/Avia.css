@@ -1,0 +1,62 @@
+
+.form, .inputs{
+    display: flex;
+}
+
+.main-text{
+    margin: 50px 0px;
+}
+
+.main-text h1{
+    font-size: 36px;
+    font-weight: 600;
+}
+
+
+
+.inputs {
+    border: 2px solid #B0EBB4;
+    border-radius: 4px;
+    margin: 5vh 0;
+
+    box-shadow: 5px 5px 15px #6a6a6a;
+}
+
+.inputs input{
+    border: none;
+    font-weight: 400;
+    padding: 15px;
+}
+
+.inputs input:focus{
+    outline: none;
+}
+
+.custom-select {
+    min-width: 50px;
+    position: relative;
+}
+
+
+.main-select select{
+    height: 100%;
+    border: none;
+}
+
+.main-select select:focus{
+    outline: none;
+}
+
+.inputs button{
+    font-weight: 600;
+    margin-left: 15px;
+    width: 140px;
+    border: none;
+    cursor: pointer;
+
+    background-color: #ACE1AF;
+    color: #fff;
+
+    border-radius: 2px;
+
+}

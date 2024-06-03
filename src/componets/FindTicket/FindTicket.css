@@ -1,0 +1,80 @@
+
+.ticket{
+
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+
+    align-items: center;
+    background-color: #FAFAFA;
+
+    border-radius: 15px;
+
+    box-shadow: 5px 5px 15px #6a6a6a;
+
+}
+
+.ticket{
+    margin-top: 30px;
+}
+
+
+.ticket:hover{
+    cursor: pointer;
+
+    box-shadow: 5px 5px 15px #4a4a4a;
+}
+
+
+.date-time li{
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.airCompany{
+    display: flex;
+    align-items: center;
+}
+
+.airCompany img,
+.airCompany h2 {
+    margin-right: 10px;
+
+}
+
+
+
+.flight-city li{
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.airCompany img{
+    width: 50px;
+}
+
+
+.button-submit button{
+    background-color: #ACE1AF;
+    border: none;
+    color: white;
+    padding: 15px;
+    max-width: 15vh;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.button-submit button:hover{
+    background-color: #A8DF8E;
+}
+
+.avia{
+    margin-bottom: 50vh;
+}
+
+.class-seat, .cost-ticket{
+    margin: 0 10px;
+}
