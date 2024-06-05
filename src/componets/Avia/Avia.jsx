@@ -1,10 +1,16 @@
 import '../../index.css';
 import './Avia.css';
+import './Tiket.css';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import AirPlaneForm from "../../Pages/AirPlaneForm/AirPlaneForm.jsx";
+import Ticket from "../../Pages/Ticket/Ticket.jsx";
 
 const Avia = () => {
+
+    const navigate = useNavigate();
+
+    const [ticket, setTicket] = useState([]);
     const [formData, setForm] = useState({
         DepartureCity: "",
         ArrivalCity: "",
@@ -21,13 +27,11 @@ const Avia = () => {
         });
     }
 
-    const navigate = useNavigate();
-
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
-            const response = await fetch("https://localhost:7018/AirTicket/FindTicket", {
+            await fetch("https://localhost:7018/AirTicket/FindTicket", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -35,15 +39,30 @@ const Avia = () => {
                 body: JSON.stringify(formData)
             });
 
-            if (response.ok) {
-                navigate("/FindTicket");
-            } else {
-                console.log("Помилка відправки форми");
-            }
 
         } catch (error) {
             console.log(error);
         }
+    }
+
+
+    async function handlerLoadingTicket(){
+        try {
+            const res = await fetch("https://localhost:7018/AirTicket/GetTikects");
+            const data  = await res.json();
+            return data;
+        }
+        catch (error) {
+            console.log(error);
+            return [];
+        }
+    }
+
+    handlerLoadingTicket().then(ticket => setTicket(ticket));
+
+
+   const handlerSelectTicket = (ticket) => {
+       navigate(`/detail/${ticket.id}?departureCity=${ticket.departureCity}&arrivalCity=${ticket.arrivalCity}&departureDate=${ticket.departureDate}&arrivalDate=${ticket.arrivalDate}&classSeat=${ticket.classSeat}`);
     }
 
     return (
@@ -53,6 +72,17 @@ const Avia = () => {
                         <h1>Купити авіаквитки по всьому світу</h1>
                     </div>
                     <AirPlaneForm formData={formData} handleSubmit={handleSubmit} handleChange={handleChange}/>
+
+                    {
+                        ticket.length > 0 && (
+                            <div className="main-tickets">
+                                {ticket.map((ticket) => (
+                                    <Ticket ticket={ticket} key={ticket.id} onSelectTicket={handlerSelectTicket}/>
+                                ))}
+                            </div>
+                        )
+                    }
+
                 </div>
             </div>
     )

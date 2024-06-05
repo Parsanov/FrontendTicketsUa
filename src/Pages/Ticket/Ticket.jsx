@@ -1,7 +1,13 @@
 import PropTypes from 'prop-types';
 import UaAirLines from '../../assets/icons/AirCompanyIcon/Ukraine-International-Airlines-Logo.png';
 
-const Ticket = ({ ticket }) => {
+const Ticket = ({ ticket, onSelectTicket }) => {
+
+    const handleSelect = () => {
+        onSelectTicket(ticket);
+    };
+
+
     return (
         <div className="ticket">
             <div className="airCompany">
@@ -35,7 +41,7 @@ const Ticket = ({ ticket }) => {
                 <h2>{ticket.costTickets}₴</h2>
             </div>
             <div className="button-submit">
-                <button title="Submit">Вибрати</button>
+                <button title="Submit" onClick={handleSelect}>Вибрати</button>
             </div>
         </div>
     );
@@ -50,7 +56,10 @@ Ticket.propTypes = {
         arrivalDate: PropTypes.instanceOf(Date).isRequired,
         classSeat: PropTypes.string.isRequired,
         costTickets: PropTypes.number.isRequired,
+        id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired, // Перевірка для ticket.id
     }).isRequired,
+    onSelectTicket: PropTypes.func.isRequired,  // Перевірка для onSelectTicket
 };
+
 
 export default Ticket;

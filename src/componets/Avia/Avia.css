@@ -59,4 +59,9 @@
 
     border-radius: 2px;
 
+    transition: 0.2s ease;
+}
+
+.inputs button:hover{
+    background-color: #A8DF8E;
 }

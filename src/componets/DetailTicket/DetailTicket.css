@@ -1,0 +1,124 @@
+.flight-info {
+    display: flex;
+    width: 800px;
+    margin-top: 50px;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+}
+
+.button-buy{
+    margin-top: 20px;
+
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    background-color: #ACE1AF;
+    color: white;
+    font-weight: 600;
+    padding: 15px;
+}
+
+.button-buy:hover{
+    background-color: #A8DF8E;
+}
+
+.flight-info span{
+    font-size: 14px;
+    display: block;
+    padding: 0 0 15px 0;
+}
+
+.cities-container {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+}
+
+
+.flight-details-departure {
+    margin-bottom: 0px;
+}
+
+.time-detail h2 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.time-detail {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    padding: 20px 0;
+    justify-content: space-between;
+    font-weight: 400;
+}
+
+.line {
+    width: 70px;
+    height: 80px;
+    position: relative;
+    top: 35%;
+    left: -30%;
+    padding: 20px;
+}
+
+.spand-time{
+    opacity: 0.6;
+}
+
+.down-span{
+    margin-top: 15px;
+}
+
+.help-ticket-info{
+
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+
+    opacity: 0.3;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    align-self: center;
+    max-width: 500px;
+    width: 100%;
+    display: inline-block;
+}
+
+
+.modal-content img{
+    width: 30px;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
