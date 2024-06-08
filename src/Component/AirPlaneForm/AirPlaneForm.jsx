@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import '/src/componets/Avia/Avia.css'
+import '/src/Pages/Avia/Avia.css'
 
 
 const AirPlaneForm = ({ handleSubmit, formData, handleChange }) => {

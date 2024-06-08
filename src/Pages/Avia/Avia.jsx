@@ -3,8 +3,8 @@ import './Avia.css';
 import './Tiket.css';
 import { useState } from 'react';
 import {useNavigate} from 'react-router-dom';
-import AirPlaneForm from "../../Pages/AirPlaneForm/AirPlaneForm.jsx";
-import Ticket from "../../Pages/Ticket/Ticket.jsx";
+import AirPlaneForm from "../../Component/AirPlaneForm/AirPlaneForm.jsx";
+import Ticket from "../../Component/Ticket/Ticket.jsx";
 
 const Avia = () => {
 

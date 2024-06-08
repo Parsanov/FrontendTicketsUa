@@ -87,4 +87,39 @@
     display: inline-block;
 }
 
+.img-profile{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
 
+.profile-main {
+    display: flex;
+    align-items: center;
+}
+
+.list-user {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.list-user li {
+    display: flex;
+    align-items: center;
+}
+
+.img-profile {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.link-profile {
+    text-decoration: none;
+    color: #000000;
+}
+
+h2 {
+    margin: 0;
+}

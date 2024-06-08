@@ -1,0 +1,19 @@
+.registration-message-login{
+    text-align: center;
+    padding-right: 5px;
+    margin-top: 50px;
+}
+
+.registration-message-login a{
+    text-decoration: none;
+    color: #A8DF8E;
+}
+
+.button-login{
+    margin-top:30px;
+}
+
+.card{
+    margin: 0 auto;
+}
+

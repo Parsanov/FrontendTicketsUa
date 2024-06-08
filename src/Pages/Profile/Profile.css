@@ -1,0 +1,27 @@
+
+
+.profile-main{
+    display: block;
+}
+
+.logout-btn{
+    margin-top: 100%;
+}
+
+.logout-btn button{
+    padding: 15px;
+    width: 10%;
+    background-color: transparent;
+    border: 3px solid #FF0000;
+    border-radius: 15px;
+    cursor: pointer;
+    color: #FF0000;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+
+.logout-btn button:hover{
+    background-color: #FF0000;
+    color: white;   
+}

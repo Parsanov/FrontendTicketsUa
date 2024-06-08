@@ -14,7 +14,7 @@ html, body {
 }
 
 .container {
-    max-width: 1060px;
+    width: 1060px;
     margin: 0 auto;
     flex: 1; /* Це забезпечує, що контейнер займатиме все доступне місце */
 }
