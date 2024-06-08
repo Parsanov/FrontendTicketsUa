@@ -1,10 +1,10 @@
 import '../../index.css';
-import './Avia.css';
-import './Tiket.css';
+import '../../Main.css';
+import '../../Tiket.css';
 import { useState } from 'react';
 import {useNavigate} from 'react-router-dom';
-import AirPlaneForm from "../../Component/AirPlaneForm/AirPlaneForm.jsx";
-import Ticket from "../../Component/Ticket/Ticket.jsx";
+import AirPlaneForm from "../../Component/MainForm/AirPlaneForm.jsx";
+import AirTicket from "../../Component/Ticket/AirTicket.jsx";
 
 const Avia = () => {
 
@@ -72,17 +72,15 @@ const Avia = () => {
                         <h1>Купити авіаквитки по всьому світу</h1>
                     </div>
                     <AirPlaneForm formData={formData} handleSubmit={handleSubmit} handleChange={handleChange}/>
-
                     {
                         ticket.length > 0 && (
                             <div className="main-tickets">
                                 {ticket.map((ticket) => (
-                                    <Ticket ticket={ticket} key={ticket.id} onSelectTicket={handlerSelectTicket}/>
+                                    <AirTicket ticket={ticket} key={ticket.id} onSelectTicket={handlerSelectTicket}/>
                                 ))}
                             </div>
                         )
                     }
-
                 </div>
             </div>
     )

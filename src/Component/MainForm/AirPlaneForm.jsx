@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import '/src/Pages/Avia/Avia.css'
+import '/src/Main.css'
 
 
 const AirPlaneForm = ({ handleSubmit, formData, handleChange }) => {
@@ -42,9 +42,9 @@ const AirPlaneForm = ({ handleSubmit, formData, handleChange }) => {
                             onChange={handleChange}
                         >
                             <option value="" disabled>Виберіть клас місця</option>
-                            <option value="economy">Економ</option>
-                            <option value="business">Бізнес</option>
-                            <option value="firstClass">Перший клас</option>
+                            <option value="Економ">Економ</option>
+                            <option value="Бізнес">Бізнес</option>
+                            <option value="Перший клас">Перший клас</option>
                         </select>
                     </div>
                     <button type="submit">Знайти</button>

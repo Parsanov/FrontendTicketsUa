@@ -1,25 +1,23 @@
-import { useState } from 'react';
+
 import './DetailTicket.css';
+import './DetailTicketProfile.css'
 import AirCraftTakeOff from '../../assets/icons/AirPlaneFlight/AirPlane-Take-Off.png';
 import AirCraftLanding from '../../assets/icons/AirPlaneFlight/AirPlane-Landing.png';
-import Successfully from '../../assets/Gif/like.gif';
 import Arrow from '../../assets/icons/Arrow/Arow.png';
 import { useParams, useSearchParams } from "react-router-dom";
-import { fetchData } from "../../Services/AccountSettingService.js";
 import {useNavigate} from "react-router-dom";
-import axios from 'axios';
+import axios from "axios";
 
 const DetailTicket = () => {
     const { id } = useParams();
     const [searchParams] = useSearchParams();
-    const [showModal, setShowModal] = useState(false);
-    const navigate = useNavigate();
 
     const departureCity = searchParams.get("departureCity");
     const arrivalCity = searchParams.get("arrivalCity");
     const departureDate = new Date(searchParams.get("departureDate"));
     const arrivalDate = new Date(searchParams.get("arrivalDate"));
     const classSeat = searchParams.get("classSeat");
+    const navigate = useNavigate();
 
     const calculateFlightDuration = (departureDate, arrivalDate) => {
         const flightDurationMs = arrivalDate - departureDate;
@@ -30,34 +28,15 @@ const DetailTicket = () => {
 
     const spandTime = calculateFlightDuration(departureDate, arrivalDate);
 
-    const buyUserTicket = async () => {
 
-        setShowModal(true);
+    const DeleteTicket = async () => {
+            await axios.post(`https://localhost:7018/AirTicket/DeleteTicket`, {ticketId: id});
 
-        const user = await fetchData();
+        setTimeout(() => {
+            navigate('/Profile');
+        }, 3000);
+    }
 
-        if (!user.userId){
-            console.log("User not found")
-        }
-
-        try {
-            await axios.post(`https://localhost:7018/AirTicket/BuyTicket`, { TicketId: id,  UserId: user.userId }, {
-                headers: { 'Content-Type': 'application/json' }
-            });
-
-            setTimeout(() => {
-                navigate('/Profile');
-            }, 3000);
-
-        } catch (error) {
-            console.error("Error purchasing ticket:", error);
-        }
-
-    };
-
-    const closeModal = () => {
-        setShowModal(false);
-    };
 
     return (
         <div className='container'>
@@ -119,19 +98,11 @@ const DetailTicket = () => {
                 </div>
             </div>
 
-            <button onClick={buyUserTicket} className="button-buy">
-                Придбати
+            <button onClick={DeleteTicket} className="button-delete">
+                Видалити квиток
             </button>
 
-            {showModal && (
-                <div className="modal">
-                    <div className="modal-content">
-                        <span className="close-button" onClick={closeModal}>&times;</span>
-                        <h2>Успішна покупка!</h2>
-                        <p>Ваш квиток був успішно придбаний. <img src={Successfully} alt="Success"/></p>
-                    </div>
-                </div>
-            )}
+
         </div>
     );
 };

@@ -35,6 +35,7 @@
 .airCompany{
     display: flex;
     align-items: center;
+    width: 250px;
 }
 
 .airCompany img,
@@ -43,9 +44,12 @@
 
 }
 
-
+.flight-city{
+    width: 190px;
+}
 
 .flight-city li{
+    text-align: center;
     display: inline-block;
     margin: 0 5px;
 }

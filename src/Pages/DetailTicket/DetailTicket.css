@@ -5,10 +5,17 @@
     justify-content: space-between;
     align-items: center;
     font-weight: 600;
+
+    margin-left: 150px;
+
 }
 
+
 .button-buy{
+
     margin-top: 20px;
+    margin-left: 150px;
+
 
     border: none;
     border-radius: 5px;

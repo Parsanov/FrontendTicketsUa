@@ -12,6 +12,7 @@ import Login from "./Pages/Login/Login.jsx";
 import Registration from "./Pages/Register/Registration.jsx";
 import DetailTicket from "./Pages/DetailTicket/DetailTicket.jsx";
 import Profile from "./Pages/Profile/Profile.jsx";
+import DetailTicketProfile from "./Pages/DetailTicket/DetailTicketProfile.jsx";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <UserProvider>
@@ -24,8 +25,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                     <Route path="/Train" element={<Train/>} />
                     <Route path="/Registration" element={<Registration/>} />
                     <Route path="/Login" element={<Login/>} />
-                    <Route path="/Detail/:id" element={<DetailTicket />} />
+                    <Route path="/detail/:id" element={<DetailTicket />} />
                     <Route path="/Profile" element={<Profile/>} />
+                    <Route path="/Profile/Detail/:id" element={<DetailTicketProfile/>} />
                 </Routes>
                 <Footer />
             </React.StrictMode>
