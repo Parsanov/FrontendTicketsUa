@@ -9,7 +9,7 @@ import { fetchData } from "../../Services/AccountSettingService.js";
 import {useNavigate} from "react-router-dom";
 import axios from 'axios';
 
-const DetailTicket = () => {
+const DetailAirTicket = () => {
     const { id } = useParams();
     const [searchParams] = useSearchParams();
     const [showModal, setShowModal] = useState(false);
@@ -136,4 +136,4 @@ const DetailTicket = () => {
     );
 };
 
-export default DetailTicket;
+export default DetailAirTicket;

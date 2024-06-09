@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import UaAirLines from '../../assets/icons/AirCompanyIcon/Ukraine-International-Airlines-Logo.png';
+import TrainCompany from '../../assets/icons/TrainCompany/toppng.com-логотип-укрзалізниці-1200x428.png'
 
 const TrainTicket = ({ ticket, onSelectTicket }) => {
 
@@ -11,7 +11,7 @@ const TrainTicket = ({ ticket, onSelectTicket }) => {
     return (
         <div className="ticket">
                 <div className="airCompany">
-                    <img src={UaAirLines} alt="Ukraine International Airlines"/>
+                    <img src={TrainCompany} alt="Ukraine International Airlines"/>
                     <h2>{ticket.trainCompany}</h2>
                 </div>
                 <div className="flight-city">

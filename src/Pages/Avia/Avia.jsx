@@ -62,7 +62,7 @@ const Avia = () => {
 
 
    const handlerSelectTicket = (ticket) => {
-       navigate(`/detail/${ticket.id}?departureCity=${ticket.departureCity}&arrivalCity=${ticket.arrivalCity}&departureDate=${ticket.departureDate}&arrivalDate=${ticket.arrivalDate}&classSeat=${ticket.classSeat}`);
+       navigate(`/DetailAir/${ticket.id}?departureCity=${ticket.departureCity}&arrivalCity=${ticket.arrivalCity}&departureDate=${ticket.departureDate}&arrivalDate=${ticket.arrivalDate}&classSeat=${ticket.classSeat}`);
     }
 
     return (

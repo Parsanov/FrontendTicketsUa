@@ -1,15 +1,14 @@
 import axios from 'axios';
 
-
-export const GetUserTicket = async (userId) => {
+export const GetUserTicket = async (userId, ticketURL) => {
     try {
         const response = await axios.post(
-            `https://localhost:7018/AirTicket/AccountTickets`,
-            { userId: userId},
+            `https://localhost:7018/${ticketURL}`,
+            { userId: userId },
             { headers: { 'Content-Type': 'application/json' } }
         );
 
-        if (response) {
+        if (response.data) {
             return response.data;
         } else {
             console.error("Помилка: Немає даних від API.");
@@ -19,4 +18,4 @@ export const GetUserTicket = async (userId) => {
         console.error("Помилка отримання квитків:", error);
         throw error;
     }
-}
+};

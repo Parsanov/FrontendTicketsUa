@@ -10,9 +10,11 @@ import Footer from "./Pages/Footer/Footer.jsx";
 import Train from "./Pages/Train/Train.jsx";
 import Login from "./Pages/Login/Login.jsx";
 import Registration from "./Pages/Register/Registration.jsx";
-import DetailTicket from "./Pages/DetailTicket/DetailTicket.jsx";
+import DetailAirTicket from "./Pages/DetailTicket/DetailAirTicket.jsx";
 import Profile from "./Pages/Profile/Profile.jsx";
-import DetailTicketProfile from "./Pages/DetailTicket/DetailTicketProfile.jsx";
+import DetailAirTicketProfile from "./Pages/DetailTicket/DetailAirTicketProfile.jsx";
+import DetailTrainTicket from "./Pages/DetailTicket/DetailTrainTicket.jsx";
+import DetailTrainTicketProfile from "./Pages/DetailTicket/DetailTrainTicketProfile.jsx";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <UserProvider>
@@ -25,9 +27,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                     <Route path="/Train" element={<Train/>} />
                     <Route path="/Registration" element={<Registration/>} />
                     <Route path="/Login" element={<Login/>} />
-                    <Route path="/detail/:id" element={<DetailTicket />} />
+                    <Route path="/DetailAir/:id" element={<DetailAirTicket />} />
+                    <Route path="/DetailTrain/:id" element={<DetailTrainTicket />} />
                     <Route path="/Profile" element={<Profile/>} />
-                    <Route path="/Profile/Detail/:id" element={<DetailTicketProfile/>} />
+                    <Route path="/Profile/AirDetail/:id" element={<DetailAirTicketProfile/>} />
+                    <Route path="/Profile/TrainDetail/:id" element={<DetailTrainTicketProfile/>} />
                 </Routes>
                 <Footer />
             </React.StrictMode>
